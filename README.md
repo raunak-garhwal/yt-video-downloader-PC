@@ -6,10 +6,17 @@ A tool to download YouTube videos using Python. This tool uses **FFmpeg** for vi
 
 1. **Python**: Make sure you have Python installed.
 2. **FFmpeg**: Follow the instructions below to install FFmpeg.
+3. **yt-dlp**: Install the `yt-dlp` Python package by following the instructions below.
 
-## Installing FFmpeg
+## Install `yt-dlp`
 
-### For Windows:
+To install `yt-dlp`, open a terminal or command prompt and execute the following command:
+
+```bash
+pip install yt-dlp
+```
+
+## Install `FFmpeg`
 
 1. **Download FFmpeg**:
    - Visit the official [FFmpeg website](https://ffmpeg.org/download.html).
