@@ -2,15 +2,19 @@ import yt_dlp
 
 def download_video(url, path):
     ydl_opts = {
+        'format': 'bestvideo[height<=1080]+bestaudio/best[height<=1080]',  # Limit video quality to 1080p
         'outtmpl': f'{path}/%(title)s.%(ext)s',  # Save the video with title as filename
+        'merge_output_format': 'mp4',  # Merge video and audio into mp4 format
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
 
 def download_playlist(playlist_url, path):
     ydl_opts = {
+        'format': 'bestvideo[height<=1080]+bestaudio/best[height<=1080]',  # Limit video quality to 1080p
         'outtmpl': f'{path}/%(playlist_title)s/%(title)s.%(ext)s',  # Save videos in a directory with the playlist title
-        'noplaylist': False,  # Ensure that a full playlist is downloaded
+        'noplaylist': False,  # Ensure that the full playlist is downloaded
+        'merge_output_format': 'mp4',  # Merge video and audio into mp4 format
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([playlist_url])
